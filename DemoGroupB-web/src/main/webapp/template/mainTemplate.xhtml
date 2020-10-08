@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+            <!-- Bootstrap minified CSS -->
+            <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+            <link href="css/mainstyler.css" rel="stylesheet" type="text/css" />
+            <link href="css/style_acc.css" rel="stylesheet" type="text/css" /> 
+            <!--<link href="css/style.css" rel="stylesheet" type="text/css" />--> 
+            <link href="resources/css/richfacesCustom.css" rel="stylesheet" type="text/css" />
+            <link href="css/layout-responsive.css" rel="stylesheet" type="text/css" />
+            <link href="css/nav-responsive.css" rel="stylesheet" type="text/css" />
+            <link href="css/form-responsive.css" rel="stylesheet" type="text/css" />
+            <!--<script type="text/javascript" language="javascript" src="/admin/javax.faces.resource/jquery.js.xhtml" />-->
+            <script type="text/javascript" language="javascript" src="#{facesContext.externalContext.requestContextPath}/js/component_js.js"></script>
+            <script type="text/javascript" language="javascript" src="js/disable_checkbox.js"/>
+            <!--<script type="text/javascript" language="javascript" src="js/jquery-3.3.1.min.js"/>-->
+
+
+            <script type="text/javascript" language="javascript" src="js/trim_startEnd_space.js"/>
+
+            <title>Library Management System : <ui:insert name="title">Library Management System</ui:insert></title>
+            <link rel="icon" href="#{facesContext.externalContext.requestContextPath}/favicon.ico"/>
+            <style id="BEWSKTSLFGTLDCS" type="text/css">body{display:none !important;}</style>
+            <script type="text/javascript" >
+                if (self === top) {
+                    var BEWSKTSLFGTLDCS = document.getElementById("BEWSKTSLFGTLDCS");
+                    BEWSKTSLFGTLDCS.parentNode.removeChild(BEWSKTSLFGTLDCS);
+                } else {
+                    top.location = self.location;
+                }
+            </script>
+            <script type="text/javascript" >
+                jQuery.noConflict();
+
+                jQuery(document).ready(function () {
+                    jQuery("#accordion > li > div").click(function () {
+
+                        if (false == jQuery(this).next().is(':visible')) {
+                            jQuery('#accordion ul').slideUp(300);
+                        }
+                        jQuery(this).next().slideToggle(300);
+                    });
+                });
+
+
+
+                var flagForSelectAllAdminProfiles = true;
+                function selectAllAdminProfiles(checkedId) {
+                    if (checkedId.length > 0 || checkedId.length !== null) {
+                        if (flagForSelectAllAdminProfiles) {
+                            $('.selectAllAdminProfiles').each(function () {
+                                this.checked = true;
+                                //                                this.disabled=true;
+                            });
+                            flagForSelectAllAdminProfiles = !flagForSelectAllAdminProfiles;
+                        } else {
+                            $('.selectAllAdminProfiles').each(function () {
+                                this.checked = false;
+                                this.disabled = false;
+                            });
+                            flagForSelectAllAdminProfiles = !flagForSelectAllAdminProfiles;
+                        }
+                    }
+                }
+
+                function toggleButton() {
+                    var menu = document.getElementById("accordion");
+                    if (menu.style.display === "block") {
+                        menu.style.display = "none";
+                    } else {
+                        menu.style.display = "block";
+                    }
+                }
+
+                var flagForcreateMonitorAdminSelectCollege = true;
+                function selectCheckBoxForcreateMonitorAdminSelectCollege(checkedId) {
+                    if (checkedId.length > 0 || checkedId.length != null) {
+                        if (flagForcreateMonitorAdminSelectCollege) {
+                            $('.itemList1').each(function () {
+                                this.checked = true;
+//                                this.disabled=true;
+                            });
+                            flagForcreateMonitorAdminSelectCollege = !flagForcreateMonitorAdminSelectCollege;
+                        } else {
+                            $('.itemList1').each(function () {
+                                this.checked = false;
+                                this.disabled = false;
+                            });
+                            flagForcreateMonitorAdminSelectCollege = !flagForcreateMonitorAdminSelectCollege;
+                        }
+                    }
+                }
+            </script>
+
+
+
+        </h:head>
+
+        <h:body>
+            <h:outputStylesheet library="css" name="style.css"/>
+            <!--<h:outputScript library="primefaces" name="jquery/jquery.js" target="head"/>-->
+            <!--<h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head"/>-->
+            <div class="header">
+                <div class="header_in">
+
+                    <ui:insert name="header">
+                        <ui:include src="header.xhtml"/>
+                    </ui:insert>
+                </div>
+
+            </div>
+            <div class="main_con">
+                <div class="title_bar_back"></div>
+                <button type="button" id="toggle" class="btn-toggle" onclick="toggleButton()">
+                    <span class="toogle-span"></span>
+                    <span class="toogle-span"></span>
+                    <span class="toogle-span"></span>
+                </button>
+
+                <div class="main_con_in">
+                    <div class="left_con">
+                        <ui:insert name="navigation">
+                            
+                        </ui:insert>
+                    </div>
+                    <div class="right_con">                       
+                        <ui:insert name="content">
+                            Here will be content
+                        </ui:insert>
+                    </div>
+
+                </div>
+                <div class="clear"></div>
+
+            </div>
+            <div class="footer">
+                <div class="footer_in">
+                    <ui:insert name="footer">
+                        <ui:include src="footer.xhtml"/>
+                    </ui:insert>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <script type="text/javascript" language="javascript" src="js/jquery-ui.js"/>
+            <script type="text/javascript" language="javascript" src="#{facesContext.externalContext.requestContextPath}/js/jquery.blockUI.js"/>
+
+            <script type="text/javascript" >
+                    jQuery.noConflict();
+
+                    jQuery(document).ready(function () {
+                        jQuery("#accordion_sub > li > div").click(function () {
+
+                            if (false == jQuery(this).next().is(':visible')) {
+                                jQuery('#accordion_sub ul').slideUp(300);
+                            }
+                            jQuery(this).next().slideToggle(300);
+                        });
+                    });
+            </script>
+        </h:body>
+    </f:view>
+
+</html>
+

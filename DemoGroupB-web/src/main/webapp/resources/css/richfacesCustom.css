@@ -1,0 +1,558 @@
+/* 
+    Document   : richfacesCustom
+    Created on : Mar 12, 2015, 11:43:19 AM
+    Author     : manoj.lamsal
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*Digitalboard Guarantee Form*/
+.digitalboardFormBlock{
+    padding: 40px;
+    margin: 0;
+    font-size: 13px;
+    color: #6C6D70;
+    font-weight: 700;
+}
+
+
+.digitalboardFormBlock #wrapper{
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -o-border-radius: 2px;
+    -ms-border-radius: 2px;
+    margin: 0;
+    padding: 60px;
+    width: 100%;
+    background-image: none;
+}
+
+.digitalboardFormBlock .header{
+    float: left;
+    width: 100%;
+    margin-bottom: 20px; 
+}
+
+.digitalboardFormBlock .logo{
+    float: left;
+}
+
+.digitalboardFormBlock .letterofCredit .logo{
+    float: left;
+    width: 50%;
+}
+
+.digitalboardFormBlock h1{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.digitalboardFormBlock h4{
+    margin-bottom: 10px;
+}
+
+.digitalboardFormBlock .appTitle{
+    float:right;
+    color: #6C6D70;
+}
+
+.digitalboardFormBlock .underline{
+    height: 12px;
+    width: 230px;
+    background-color: #ED1B2F;
+    margin-top: 4px;
+}
+
+.digitalboardFormBlock .form-heading{
+    margin-bottom: 10px;
+    font-weight: 800;
+}
+
+.digitalboardFormBlock .form-area .fieldHolder{
+    line-height: 2;
+    /*margin: 8px 0;*/
+    margin: 0;
+    position: relative;
+}
+
+.digitalboardFormBlock .form-area .fieldHolder label{
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.digitalboardFormBlock .form-area .row.right .fieldHolder{
+    float: right;
+}
+
+
+.digitalboardFormBlock .form-area .formHolder{
+    width: 220px;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.digitalboardFormBlock .form-area .fieldHolder ul{
+    padding-left: 40px;
+}
+.digitalboardFormBlock .form-area .formHolder1{
+    width: 220px;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 210px;
+}
+
+
+.digitalboardFormBlock .form-area .radio label{
+    margin-right: 8px;
+    float: left;
+    width: auto;
+    min-width: 60px;
+}
+
+.digitalboardFormBlock .form-area input{
+    background: #F2F3F4;
+    padding: 4px 8px;
+    color: #6C6D70;
+    margin-right: 8px;
+    width: 100%;
+    border: 1px solid #CEC7C7;
+}
+
+.digitalboardFormBlock .form-area textarea{
+    background-color: #F2F3F4;
+    padding: 4px 8px;
+    color: #6C6D70;
+    margin-right: 8px;
+    width: 100%;
+    border: 1px solid #DDDDDD;
+}
+.digitalboardFormBlock .form-area select{
+    background-color: #F2F3F4;
+    border: 0;
+    padding: 4px 8px;
+    color: #6C6D70;
+    margin-right: 8px;
+    width: 220px;
+}
+
+.digitalboardFormBlock .form-area .row{
+    float: left;
+    width: 100%;
+}
+
+.digitalboardFormBlock .form-area .headerFormBlock .row.right{
+    float: right;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.digitalboardFormBlock .form-area .headerFormBlock .row.right label{
+    min-width: 90px;
+    float: left;
+}
+.digitalboardFormBlock .form-area .row .col-6{
+    float: left;
+    width: 50%;
+}
+
+.digitalboardFormBlock .form-area .row .col-3, .digitalboardFormBlock .form-area .row2 .col-3{
+    float: left;
+    width: 20%;
+    padding-right: 15px;
+}
+.digitalboardFormBlock .form-area .row .col-6.right{
+    float: right;    
+}
+
+.digitalboardFormBlock .form-area img.rf-cal-btn{
+    display: none;
+}
+
+.digitalboardFormBlock .form-area .row2{
+    float: left;
+    width: 100%;
+    margin: 0 0 10px 0;
+    padding: 0;
+}
+
+.digitalboardFormBlock .form-area .row2 label{
+    width: 200px;
+    float: left;
+}
+
+.digitalboardFormBlock .form-area .span-label{
+    float: left;
+    width: auto;
+    margin-right: 10px;
+}
+
+.digitalboardFormBlock .form-area .row2 .col-6{
+    float: left;
+    width: 50%;
+}
+
+.digitalboardFormBlock .form-area table th{
+    background-color: #F2F3F4;
+    padding: 4px 8px;
+    text-align: center;
+}
+
+/*.digitalboardFormBlock .form-area table td{
+    background-color: #F2F3F4;
+}*/
+
+.digitalboardFormBlock .form-area table input{
+    margin: 0;
+}
+
+.digitalboardFormBlock .form-area table input[type="radio"]{
+    width: 20px;
+    float: left;
+}
+
+.digitalboardFormBlock .form-area table.letterOfCreditTable label{
+    width: 100%;
+    float:left;
+}
+
+.digitalboardFormBlock .form-area table.letterOfCreditTable input{
+    width: 220px;
+}
+
+.importCreditOl li{
+    margin-top: 4px;    
+}
+
+.letterOfCreditTable td{
+    padding-bottom: 10px;
+    vertical-align: top;
+    padding-right: 60px;
+}
+
+.letterOfCreditTable td .formHolder td{
+    padding-bottom: 0;
+}
+
+.valMessage{
+    width: 100%;
+    margin: 0px;
+    padding: 1px 8px;
+    border: 1px solid #D81528;
+    background: #ED1B2F;
+    font-size: 12px;
+    color: #E4CED0;
+    display: table;
+}
+
+.digitalboardFormBlock .btnGroup{
+    float: left;
+    width: 100%;
+    margin: 40px 0 10px 0;
+}
+
+.digitalboardFormBlock .btnGroup input{
+    width: auto;
+    color: #FFFFFF;
+    background: #ED1B2F;
+    font-size: 14px;
+    padding: 8px 14px;
+    border-radius: 2px;
+    transition: background-color 0.25s ease-in-out;
+    cursor: pointer;
+    border: 1px solid #BD0315;
+}
+
+.digitalboardFormBlock .btnGroup input:hover{
+    background-color: #F73E4F;
+    border: 1px solid #ED1B2F;
+}
+
+.header-int{
+    font-size: 52px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.statementBlock{
+    font-weight: normal;
+}
+
+.statementBlock .form-heading{
+    float:left;
+    width: 100%;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.statementBlock .form-heading .digitalboardTitle{
+    margin-bottom: 10px;
+}
+
+.statementBlock .form-heading label{
+    width: auto;
+    margin-right: 10px;
+}
+
+.statementPar{
+    float: left;
+    width: 100%;
+}
+
+.statementPar p{
+    margin-bottom: 10px;
+    line-height: 2;
+    text-align: justify;
+}   
+
+.digitalboardFormBlock .form-area .statementPar input{
+    width: 100%;
+}
+
+.digitalboardFormBlock .form-area .statementPar .formHolder{
+    vertical-align: top;
+} 
+
+.headerFormBlock{
+    float: right;
+    width: 50%;
+}
+
+.radioVerticalBlock{
+    display: inline;
+}
+
+.digitalboardFormBlock .form-area table .radioVerticalBlock label{
+    width: auto;
+    cursor: pointer;
+}
+
+.digitalboardFormBlock .form-area table .radioVerticalBlock input{
+    width: auto;
+    margin: 6px 8px 0 0;
+    cursor: pointer;
+}
+.digitalboardFormBlock .form-area table .radioHorizontalBlock{
+    float: left;
+}
+
+.digitalboardFormBlock .form-area .radioHorizontalBlock{
+    float: left;
+}
+.digitalboardFormBlock .form-area table .radioHorizontalBlock label{
+    width: auto;
+    cursor: pointer;
+    min-width: 100px;
+}
+
+.digitalboardFormBlock .form-area .radioHorizontalBlock table input[type="radio"], .digitalboardFormBlock .form-area table.radioHorizontalBlock input[type="radio"]{
+    width: auto;
+    margin: 6px 8px 0 0;
+    cursor: pointer;
+}
+
+.digitalboardFormBlock .form-area .radioHorizontalBlock table label{
+    min-width: 180px;
+}
+
+.digitalboardFormBlock .form-area table .checkVerticalBlock label{
+    width: auto;
+    cursor: pointer;
+}
+
+.digitalboardFormBlock .form-area table.checkVerticalBlock input{
+    width: auto;
+    margin: 6px 8px 0 0;
+    cursor: pointer;
+}
+
+.digitalboardFormBlock .form-area .formParagraphBlock input{
+    width: auto;
+    max-width: 200px;
+
+}
+
+.digitalboardFormBlock .form-area .formParagraphBlock label{
+    margin-right: 10px;
+}
+
+.digitalboardFormBlock .form-area .fieldHolderTwo input{
+    width: 200px;
+}
+
+.digitalboardFormBlock .form-area .fieldHolderTwo label{
+    width: 200px;
+    float: left;
+}
+
+
+.digitalboardFormBlock .form-area .formOrderedList li{
+    margin-bottom: 10px; 
+}
+.digitalboardFormBlock .form-area .formOrderedList input {
+    width: 90%;
+}
+
+.digitalboardFormBlock .agreementBlock li{
+    line-height: 2;
+    float: left;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.digitalboardFormBlock .agreementBlock.subOrderedList{
+    padding-left: 40px;
+}
+
+.digitalboardFormBlock .agreementBlock.subOrderedList li{
+    list-style-type: lower-alpha;
+}
+
+.digitalboardFormBlock .importCreditOrderedList li{
+    line-height: 2;
+    float: left;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.digitalboardFormBlock .importCreditOrderedList .subOrderedList{
+    padding-left: 40px;
+}
+
+.digitalboardFormBlock .importCreditOrderedList .subOrderedList li{
+    list-style-type: lower-alpha;
+}
+
+.importCreditOrderedList .subOrderedList label{
+    width: 250px;
+    display: inline-block;
+}
+
+
+.digitalboardFormBlock .comDigitalboardOrderedList li{
+    line-height: 2;
+    float: left;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.digitalboardFormBlock .comDigitalboardOrderedList li label{
+    width: 220px;
+    display: inline-block;
+}
+
+.digitalboardFormBlock .comDigitalboardOrderedList li .radioHorizontalBlock label{
+    width: auto;
+    margin-right: 10px;
+}
+
+
+
+.formTitle{
+    text-align:center;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.account .rf-fu {
+    width: auto;
+    background: none;
+    border: none;
+}
+
+.account .rf-fu-lst {
+    height: auto !important;
+}
+
+.account .rf-fu-btns-lft{
+    width: auto;
+}
+
+.account .rf-fu-itm {
+    border: 1px solid #aaa;
+    min-width: 300px;
+}
+
+.account .rf-fu-hdr {
+    margin-left: 0px;
+    margin-top: 0px;
+    background: none;
+    border: none;
+}
+
+.account .rf-fu-btns-rgh {
+    text-align: left;
+    width: auto;
+}
+
+.account .rf-fu-btn-add, .rf-fu-btn-upl, .rf-fu-btn-clr{
+    margin: 0px;
+    margin-right: 2px;
+}
+
+.account .left-align-more {
+    margin-left: -230px;
+}
+
+.account .rf-fu-itm-lnk {
+    padding-left: 5px;
+}
+
+
+
+.upload-image-block .account .rf-fu{
+    width: 305px;
+}
+
+.upload-image-block .left-align img {
+    width: 200px;
+    height: 200px;
+    margin: 20px 0 0 215px;
+}
+
+.upload-image-block .rf-fu-lst{
+    width: 305px;
+    margin: 10px 0 0 205px;
+    overflow-x: visible;
+    overflow-y: visible;
+}
+
+.upload-image-block .account .rf-fu-itm {
+    width: 305px;
+    margin: 10px 0 0 205px;
+}
+
+*.rf-ds-dis{
+    color: #ABABAB !important;
+}
+
+*.rf-ds-dis:hover{
+    background: #d6d9db !important;
+    border: 1px solid   #adaeac;
+    color: #ABABAB !important;
+}
+
+input.rf-sel-dflt-lbl, input.rf-sel-inp{
+    width: 308px;
+    padding: 5px 3px;
+    float: left;
+    font-size: 12px;
+    font-weight: 500;
+    color: #777777;
+}
+.rf-sel-btn-arrow{
+    display: none;
+}
+/*.rf-sel-lst-scrl{
+    width: 100%;
+    font-size: 12px;
+    font-weight: 500;
+}*/
+
+.special tr[id]{
+    display:none; 
+}

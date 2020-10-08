@@ -1,0 +1,256 @@
+/* 
+    Document   : style
+    Created on : Mar 8, 2015, 5:08:26 PM
+    Author     : manoj.lamsal
+    Description:
+        Purpose of the stylesheet follows.
+*/
+/*DATA SCROLLER*/
+
+*.rf-ds {
+	white-space: nowrap;
+	display: inline-block;
+	font-size: 11px;
+	padding: 1px;
+	font-family: Arial, Verdana, sans-serif ;
+	background: #FFFFFF;
+}
+a.rf-ds-nmb-btn {
+	color: #000000;
+}
+a.rf-ds-btn {
+	color: #000000;
+}
+*.rf-ds-cont {
+	white-space: nowrap;
+	display: inline-block;
+	font-size: 11px;
+	padding: 1px;
+	font-family: Arial, Verdana, sans-serif ;
+	background: #FFFFFF;
+}
+*.rf-ds-cont-dec {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #C4C0C9;
+}
+*.rf-ds-btn {
+	cursor: pointer;
+	padding: 2px 10px 3px 10px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #C4C0C9;
+	display: inline-block;
+	background-position: top left;
+	background-repeat: repeat-x;
+	background-color: #D4CFC7;
+	background-image: url(/admin/rfRes/dsBtnGrad.png?db=eAFjZJBjZDBiZBBh!P!21TPG!1fOH2dgAgA6DgeR&ln=org.richfaces.images);
+	font-size: 11px;
+	font-family: Arial, Verdana, sans-serif ;
+	color: #000000;
+	text-decoration: none;
+	font-weight: normal;
+}
+*.rf-ds-btn:hover {
+	color: rgb(255, 255, 255);
+}
+*.rf-ds-dis:hover {
+	color: #C4C0C9;
+	cursor: default;
+}
+*.rf-ds-btn-first, *.rf-ds-btn-fastrwd, *.rf-ds-btn-prev {
+	margin-right: 1px;
+}
+*.rf-ds-btn-next, *.rf-ds-btn-fastfwd, *.rf-ds-btn-last {
+	margin-left: 1px;
+}
+*.rf-ds-nmb-btn {
+	cursor: pointer;
+	width: 2em;
+	text-align: center;
+	margin-left: 1px;
+	margin-right: 1px;
+	padding: 2px 2px 3px 2px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #C4C0C9;
+	background-color: #FFFFFF;
+	background-image: url(/admin/rfRes/dsDigGrad.png?db=eAFjZJBjZDBiZBBh!P!x3UvG!0DAwAQAPLEILw__&ln=org.richfaces.images);
+	background-position: top left;
+	background-repeat: repeat-x;
+	display: inline-block;
+	font-size: 11px;
+	font-family: Arial, Verdana, sans-serif ;
+	text-decoration: none;
+	color: #000000;
+	font-weight: normal;
+}
+*.rf-ds-nmb-btn:hover {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #C4C0C9;
+	background-position: top left;
+	background-repeat: repeat-x;
+	background-color: #FFFFFF;
+	background-image: url(/admin/rfRes/dsBtnGradOver.png?db=eAFjZJBjZDBiZBBh!P!x3UvG!0DAwAQAPLEILw__&ln=org.richfaces.images);
+}
+*.rf-ds-press {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #C4C0C9;
+	background: #F1EEE9;
+}
+*.rf-ds-act, *.rf-ds-act:hover {
+	cursor: default;
+	font-weight: bold;
+	border-width: 1px;
+	border-style: solid;
+	border-color: transparent;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #C4C0C9;
+	background: none;
+}
+*.rf-ds-dis {
+	color: #C4C0C9;
+	cursor: default;
+}
+
+/*DATA SCROLLER END*/
+
+
+a:visited{
+  color: #17037b;
+}
+
+
+.rf-ds-btn:hover{
+     color: #000000;
+}
+
+
+.rf-ds-act, .rf-ds-act:hover{
+     border-color: #C4C0C9;
+     background-color: #FFFFFF;
+}
+
+
+.rf-ds-nmb-btn:hover{
+  border-color: #C4C0C9;
+    background-image: url("/admin/rfRes/dsBtnGrad.png?v=4.2.0.Final&db=eAFjZJBjZDBiZBBh!P!21TPG!1fOH2dgAgA6DgeR&ln=org.richfaces.images");
+}
+
+#dependCus table{
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #C4C0C9;
+    empty-cells: show;
+    width: 100%;
+}
+
+
+#dependCus th{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #C4C0C9;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #C4C0C9;
+    background-color: #D4CFC7;
+    background-image: url(/admin/rfRes/colHdrGrad.png?v=4.2.0.Final&db=eAFjZJBjZDBiZBBh!H!!zlXG!1fOH2dgAgA4fAdk&ln=org.richfaces.images);
+    background-position: top left;
+    color: #000000;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px;
+    text-align: center;
+}
+
+
+#dependCus td {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #C4C0C9;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #C4C0C9;
+    color: #000000;
+    font-family: Arial, Verdana, sans-serif;
+    font-size: 12px;
+    padding: 4px;
+}
+
+p label.redlabel {
+  color: red;
+  width: 100%;
+  float: left;
+}
+
+
+/*Custom Popup*/
+
+.rf-pp-cntr.customPop{
+    left: 0;
+    width: 70%;
+    position: absolute !important;
+    top: 20px !important;
+}
+
+.rf-pp-cntr.customPop .service-block{
+    float: left;
+    width: 100%;
+    margin-right: 1%;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #AAAAAA;
+}
+
+
+.rf-pp-cntr.customPop .service-block:last-child{
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+
+.rf-pp-cntr.customPop .title-block{
+    float: left;
+    width: 20%;
+}
+
+.rf-pp-cntr.customPop .title{
+    font-weight: bold;
+    font-size: 13px;
+    float: left;
+    width: 20%;
+    margin: 0;
+    
+}
+
+.rf-pp-cntr.customPop .subtitle-block{
+    float:  left;
+    width: 80%;
+}
+
+
+.rf-pp-cntr.customPop p.sub-title{
+    font-weight: normal;
+    padding: 0 0 0 10px;
+    margin: 2px 0 2px 0;
+    font-size: 11px;
+    clear: none;
+}
+
+.rf-pp-cntr.customPopCenter{
+    left: 0;
+    width: 70%;
+    position: absolute !important;
+    top: 170px !important;
+    float: left;
+    width: 30%;
+}
