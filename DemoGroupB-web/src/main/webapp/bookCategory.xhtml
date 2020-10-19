@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:rich="http://richfaces.org/rich">
+    <h:head>
+        <title></title>
+    </h:head>
+    <h:body>
+        <rich:panel>
+            <h3>List Users</h3>
+                
+        <rich:panel id="panel">
+            <h3>Add Book</h3>
+            <h:form >
+                <p>Name: <rich:inplaceInput id="name" value="#{bookController.bookDto.name}" validatorMessage="Input name is required" defaultLabel="Input your name ">
+                        <f:validateRequired />
+                        <rich:validator/>
+                    </rich:inplaceInput>
+                    <rich:message for="name" />
+                </p>.
+
+
+                <p>   <h:outputLabel value="Description: "><span class="compulsoryField">*</span></h:outputLabel>
+                                    <h:inputText id="itClassDescription" 
+                                                 required="true" 
+                                                 requiredMessage="Enter Description" 
+                                                 validatorMessage="Enter Valid Description."
+                                                 value="#{bookController.bookDto.description}">
+                                    </h:inputText>
+                                    <h:message class="redcolortext" for="itClassDescription" id="itClassDescriptionErr"/>
+                                </p>
+
+               
+                <p>
+                    <h:commandButton value="add"  action="#{bookController.saveUpdate()}" >
+                      
+                    </h:commandButton>
+
+                   
+
+
+                </p>
+
+                <!--popup panel-->
+
+                <h:form>
+
+                    <rich:popupPanel id="popup" modal="false" autosized="true" resizeable="false" show="#{not empty users.exceptions}">
+                        <f:facet name="header">
+                            <h:outputText value="Exception Message" />
+                        </f:facet>
+                        <f:facet name="controls">
+                            <h:outputLink value="#" onclick="#{rich:component('popup')}.hide(); return false;" style="color: inherit">
+                                X
+                            </h:outputLink>
+                        </f:facet>
+                        <p>The user with the email address already existed.</p>
+
+                        <p>
+
+
+                            <h:commandButton value="Ok Botton" action="#{users.removeExceptions()}" onclick="#{rich:component('popup')}.hide()"/> 
+
+                        </p>
+                    </rich:popupPanel>
+                </h:form>
+
+                <rich:tooltip value="Please Enter Name " target="name"/>
+                <rich:tooltip value="Please Enter Email " target="email"/>
+                <rich:tooltip value="Please Enter Mobile " target="mobile"/>
+                <rich:tooltip value="Please Select Faculty " target="faculty"/>
+            </h:form>
+        </rich:panel>
+
+    
+                    
+            <h:form id="manageNoticePanelForm">
+                <rich:extendedDataTable value="#{bookDataBean.bookDtos}" id="table" var="bookDto" filterVar="filterVal">
+
+                    
+                    <rich:column><f:facet name="header">Id</f:facet>#{bookDto.id}</rich:column>
+
+                    <rich:column sortBy="#{bookDto.name}">
+                        <f:facet name="header">Name</f:facet>#{bookDto.name}
+                    </rich:column>
+
+                   <rich:column sortBy="#{bookDto.description}" >
+                        <f:facet name="header">Description</f:facet>#{bookDto.description}
+                    </rich:column>
+
+                     <rich:column>
+                        <h:commandButton value="edit" action="#{bookController.initEdit()}">
+                            <f:setPropertyActionListener value="#{bookDto}" target="#{bookDataBean.bookDto}" />
+                             <f:ajax execute="@this" onevent="function(data){showJqueryLoader(data)}" render="@form"/>
+                        </h:commandButton>
+                    </rich:column>
+
+                  
+                    <h:column>
+
+                        <h:commandButton value="Delete">  
+                            <rich:componentControl target="popup" operation="show" />  
+                        </h:commandButton>  
+                        <rich:popupPanel id="popup" modal="false" autosized="true" resizeable="false">  
+                            <f:facet name="header">  
+                                <h:outputText value="Are you sure you want to delete?" />  
+                            </f:facet>  
+                            <f:facet name="controls">  
+                                <h:graphicImage value="/images/close.png" style="cursor:pointer" onclick="#{rich:component('popup')}.hide()" height="10px" width="10px"/>  
+                            </f:facet>  
+                            <p>  
+                   
+
+                                <h:commandButton value="delete" action="#{bookController.delete}" onclick="#{rich:component('popup')}.hide()">
+                                    <f:setPropertyActionListener value="#{bookDto}" target="#{bookDataBean.bookDto}"/>
+                                    <f:ajax execute="@this" onevent="function(data){showJqueryLoader(data)}" render="@form"/>
+                                </h:commandButton>
+                            </p>  
+                        </rich:popupPanel>  
+                    </h:column>
+
+                </rich:extendedDataTable>
+            </h:form>
+        </rich:panel>
+
+
+
+        
+
+
+           </h:body>
+</html>
+

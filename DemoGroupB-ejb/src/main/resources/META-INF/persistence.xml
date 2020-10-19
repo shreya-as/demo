@@ -16,6 +16,7 @@
     <class>com.payrollSystem.entity.common.Gender</class>
     <class>com.payrollSystem.entity.common.Province</class>
     <class>com.payrollSystem.entity.common.Status</class>
+    <class>com.payrollSystem.entity.common.BookCategory</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
