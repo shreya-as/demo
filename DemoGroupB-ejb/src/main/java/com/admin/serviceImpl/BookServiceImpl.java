@@ -33,7 +33,7 @@ public class BookServiceImpl implements BookService {
 
      @Override
     public boolean save(BookDto bookdto) {
-        bookdto.setBookName("science");
+      
         return bookDao.save(convertToBookCategory(bookdto));
         
     }
@@ -82,7 +82,7 @@ BookCategory bc   = bookDao.getById(bookDto.getId());
 
     @Override
     public List<BookDto> getAllBooks() {
-        return (List<BookDto>) BookCategoryMapper.convertToDtos((BookCategory) bookDao.findAll());
+        return  BookCategoryMapper.convertToDtos( bookDao.findAll());
 
     }
 

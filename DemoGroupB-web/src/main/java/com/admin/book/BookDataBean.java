@@ -26,7 +26,7 @@ public class BookDataBean implements Serializable  {
   
      private BookDto bookDto;
     private boolean createEditPanel;
-    private List<BookDto> bookDtos;
+    private List<BookDto> bookDtos ;
 
     public BookDto getBookDto() {
         if (bookDto == null) {

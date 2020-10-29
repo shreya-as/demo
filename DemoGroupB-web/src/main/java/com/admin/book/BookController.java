@@ -10,6 +10,9 @@ import com.admin.dto.BookDto;
 import com.admin.dto.StatusDto;
 import com.admin.service.BookService;
 import com.admin.util.Utility;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -28,37 +31,34 @@ import lombok.Setter;
 @Setter
 @ManagedBean
 @RequestScoped
-public class BookController {
+public class BookController implements Serializable {
     
     @ManagedProperty(value = "#{bookDataBean}")
-       private  BookDataBean bookDataBean;
-     private BookDto bookDto;
+    private  BookDataBean bookDataBean;
+    
+    private BookDto bookdto;   
     private AdminDto adminDto;
     private StatusDto statusDto;
     private boolean edit=false;
-    
+  private List<BookDto> bookDtos = new ArrayList<>();
+
     
     @EJB
     private BookService bookService;
-
-     @PostConstruct
-    public void init() {
-        bookDto = new BookDto();
-        bookDto.setId(1l);
-
+ @PostConstruct
+    public void init(){
+        bookdto = new BookDto();
+        getAllBooks();
 
     }
+
     
      public String returnToPage() {
         return "bookCategory.xhtml?faces-redirect=true";
     }
 
-         public String initCreate() {
-        bookDataBean.setBookDto(new BookDto());
-        bookDataBean.setCreateEditPanel(true);
-        return returnToPage();
-    }
-
+            
+         
 public String saveUpdate() {
         bookDataBean.getBookDto().setUpdatedByAdminDto(adminDto);
         bookDataBean.getBookDto().setCreatedByAdminDto(adminDto);
@@ -82,13 +82,22 @@ private String edit() {
         boolean response = bookService.save(bookDataBean.getBookDto());
         if (response) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Successfully Saved", null));
+                               getAllBooks();
+
         }
         return navigateToPage();
     }
+    public void getAllBooks(){
+        bookDtos = bookService.getAllBooks();
+    }
+
+
 
     public String navigateToPage() {
         Utility.removeSessionBeanJSFDataModelObject("bookDataBean");
-        bookDataBean = (BookDataBean) Utility.getSessionObject("bookDataBean");
+        bookDataBean =  (BookDataBean) Utility.getSessionObject("bookDataBean");
+             bookDataBean.setBookDtos(bookService.getAllBooks());
+
                 return returnToPage();
     }
 
@@ -103,12 +112,14 @@ private String edit() {
         boolean success = bookService.delete(bookDataBean.getBookDto());
         if (success) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Deleted Successfully", null));
+                               getAllBooks();
+
         }
         return navigateToPage();
     }
 
        public void cancelEdit(){
-        bookDto = new BookDto();
+      
         edit=false;
 
     }

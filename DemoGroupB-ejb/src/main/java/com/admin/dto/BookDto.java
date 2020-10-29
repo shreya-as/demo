@@ -6,7 +6,6 @@
 package com.admin.dto;
 
 import com.admin.dto.abstracts.AbstractCodeDto;
-import com.payrollSystem.entity.common.BookCategory;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,8 +16,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class BookDto extends AbstractCodeDto {
-     private String bookName;
-
   
     
 }

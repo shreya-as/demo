@@ -34,3 +34,4 @@ public class BranchDaoImpl extends StatusableDaoImpl<Branch> implements BranchDa
 
 }
 }
+    

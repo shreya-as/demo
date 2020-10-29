@@ -19,9 +19,7 @@ public interface BookService {
 boolean edit(BookDto bookdto);
 boolean delete(BookDto bookdto);
 boolean save(BookDto bookdto);
-
-        
-     List<BookDto> getAllBooks();
+ List<BookDto> getAllBooks();
 
 
 
