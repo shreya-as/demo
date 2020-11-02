@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.admin.book;
+package com.admin.bookGroup;
 
-import com.admin.dto.BookDto;
-import java.io.Serializable;
+import com.admin.dto.BookGroupDto;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
@@ -17,24 +16,21 @@ import lombok.Setter;
  *
  * @author fox
  */
-@Getter
 @Setter
+@Getter
 @ManagedBean
 @SessionScoped
-public class BookDataBean implements Serializable  {
-
-  
-     private BookDto bookDto;
+public class BookGroupDataBean {
+      private BookGroupDto bookGroupDto;
     private boolean createEditPanel;
-    private List<BookDto> bookDtos ;
+    private List<BookGroupDto> bookDtos ;
 
-    public BookDto getBookDto() {
-        if (bookDto == null) {
-            bookDto = new BookDto();
+    public BookGroupDto getBookDto() {
+        if (bookGroupDto == null) {
+            bookGroupDto = new BookGroupDto();
         }
-        return bookDto;
+        return bookGroupDto;
     }
 
-   
    
 }

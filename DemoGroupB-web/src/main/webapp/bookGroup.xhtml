@@ -14,7 +14,7 @@
         <rich:panel id="panel">
             <h3>Add Book</h3>
             <h:form >
-                <p>Name: <rich:inplaceInput id="name" value="#{bookController.bookDataBean.bookDto.name}" validatorMessage="Input name is required" defaultLabel="Input your name ">
+                <p>Name: <rich:inplaceInput id="name" value="#{bookGroupController.bookGroupDataBean.bookDto.name}" validatorMessage="Input name is required" defaultLabel="Input your name ">
                         <f:validateRequired />
                         <rich:validator/>
                     </rich:inplaceInput>
@@ -25,7 +25,7 @@
                 <p>   <h:outputLabel value="Description: "><span class="compulsoryField">*</span></h:outputLabel>
                                     
                                     
-                                                    <h:inputTextarea id="desc" value="#{bookController.bookDataBean.bookDto.description}"
+                                                    <h:inputTextarea id="desc" value="#{bookGroupController.bookGroupDataBean.bookDto.description}"
                              rendered="#{bookController.edit==false}" required="true"
                              requiredMessage="Invalid Field" />
                                                   
@@ -37,7 +37,7 @@
 
                
                 <p>
-                    <h:commandButton value="add"  action="#{bookController.saveUpdate()}" >
+                    <h:commandButton value="add"  action="#{bookGroupController.saveUpdate()}" >
                       
                     </h:commandButton>
                     </p>
@@ -49,7 +49,7 @@
                     
             <h:form id="manageNoticePanelForm">
                 <rich:dataTable id="dtDepartment"
-                                value="#{bookDataBean.bookDtos}"
+                                value="#{bookGroupDataBean.bookDtos}"
                                         var="book"
                                         rowKeyVar="row">
                              <f:facet name="noData">
@@ -87,18 +87,18 @@
                                  <h:column>
                <f:facet name = "header">Action</f:facet>
                <h:commandButton value = "Edit" 
-                                action = "#{bookController.initEdit()}" >        
+                                action = "#{bookGroupController.initEdit()}" >        
                   <f:setPropertyActionListener 
-                  target = "#{bookDataBean.bookDto}" value = "#{book}" />
+                      target = "#{bookGroupDataBean.bookGroupDto}" value = "#{book}" />
                </h:commandButton>
             </h:column>
 
                 <h:column>
                     <f:facet name="header">Action</f:facet>
-                    <h:commandButton id="delete" value="Delete" action="#{bookController.delete(bookdto)}"
+                    <h:commandButton id="delete" value="Delete" action="#{bookGroupController.delete(bookdto)}"
                                      styleClass="btn btn-danger">
                     <f:setPropertyActionListener 
-                  target = "#{bookDataBean.bookDto}" value = "#{book}" />
+                  target = "#{bookGroupDataBean.bookGroupDto}" value = "#{book}" />
                </h:commandButton>
 
                                     </h:column>
@@ -109,7 +109,7 @@
 
 
         <h:form id="frmEditParent">
-                <rich:popupPanel show="#{bookDataBean.createEditPanel}" styleClass="customPop" id="popupEditParent" domElementAttachment="form" autosized="true" resizeable="false" moveable="true" onmaskclick="#{rich:component('popupEditParent')}.hide();">
+                <rich:popupPanel show="#{bookGroupDataBean.createEditPanel}" styleClass="customPop" id="popupEditParent" domElementAttachment="form" autosized="true" resizeable="false" moveable="true" onmaskclick="#{rich:component('popupEditParent')}.hide();">
                     <div class="account">
                         <div class="rtinner_left_block">
                             <fieldset class="container-fluid">
@@ -120,7 +120,7 @@
                                                  required="true" 
                                                  requiredMessage="Enter Name" 
                                                  validatorMessage="Enter Valid Name."
-                                                 value="#{bookController.bookDataBean.bookGroupDto.name}">
+                                                 value="#{bookGroupController.bookGroupDataBean.bookDto.name}">
                                         <f:converter converterId="convertor.StringSpace"/>
                                     </h:inputText>
                                     <h:message class="redcolortext" for="itClassName" id="itClassNameErr"/>
@@ -133,19 +133,19 @@
                                                  required="true" 
                                                  requiredMessage="Enter Description" 
                                                  validatorMessage="Enter Valid Description."
-                                                 value="#{bookController.bookDataBean.bookGroupDto.description}">
+                                                 value="#{bookGroupController.bookGroupDataBean.bookDto.description}">
                                     </h:inputText>
                                     <h:message class="redcolortext" for="itClassDescription" id="itClassDescriptionErr"/>
                                 </p>
                             </fieldset>
                         </div>
-                        <div class="rtinner_right_block">
+                         <div class="rtinner_right_block">
                             <div class="Btn_block">
                                 <p>
-                                    <h:commandButton id="btnEditParent" value="Save" action="#{bookController.saveUpdate()}">
+                                    <h:commandButton id="btnEditParent" value="Save" action="#{bookGroupController.saveUpdate()}">
                                     </h:commandButton>
 
-                                    <h:commandButton id="btnCancel" value="Cancel" action="#{bookController.navigateToPage()}" immediate="true">
+                                    <h:commandButton id="btnCancel" value="Cancel" action="#{bookGroupController.navigateToPage()}" immediate="true">
                                     </h:commandButton>
                                 </p>
                             </div>

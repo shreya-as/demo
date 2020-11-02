@@ -3,16 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.admin.book;
+package com.admin.bookGroup;
 
 import com.admin.dto.AdminDto;
 import com.admin.dto.BookDto;
+import com.admin.dto.BookGroupDto;
 import com.admin.dto.CollegeDto;
 import com.admin.dto.StatusDto;
-import com.admin.service.BookService;
+import com.admin.service.BookGroupService;
 import com.admin.util.Utility;
-import java.util.ArrayList;
-import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.application.FacesMessage;
@@ -31,13 +30,11 @@ import lombok.Setter;
 @Setter
 @ManagedBean
 @RequestScoped
-public class BookController {
-    
-    @ManagedProperty(value = "#{bookDataBean}")
-    private  BookDataBean bookDataBean;
 
-   
-    
+public class BookGroupController {
+     @ManagedProperty(value = "#{bookGroupDataBean}")
+    private  BookGroupDataBean bookGroupDataBean;
+     
     private AdminDto adminDto;
     private CollegeDto collegeDto;
     private StatusDto statusDto;
@@ -46,8 +43,9 @@ public class BookController {
 
     
     @EJB
-    private BookService bookService;
- @PostConstruct
+    private BookGroupService bookService;
+    
+    @PostConstruct
     public void init(){
        adminDto = new AdminDto();
        adminDto.setId(1L);
@@ -59,28 +57,28 @@ public class BookController {
 
     
      public String returnToPage() {
-        return "bookCategory.xhtml?faces-redirect=true";
+        return "bookGroup.xhtml?faces-redirect=true";
     }
 
         public String initCreate() {
-        bookDataBean.setBookDto(new BookDto());
-        bookDataBean.setCreateEditPanel(true);
+        bookGroupDataBean.setBookGroupDto(new BookGroupDto());
+        bookGroupDataBean.setCreateEditPanel(true);
         return returnToPage();
     }
     
         
 public String saveUpdate() {
-        bookDataBean.getBookDto().setUpdatedByAdminDto(adminDto);
-        bookDataBean.getBookDto().setCreatedByAdminDto(adminDto);
+        bookGroupDataBean.getBookGroupDto().setUpdatedByAdminDto(adminDto);
+        bookGroupDataBean.getBookGroupDto().setCreatedByAdminDto(adminDto);
 
-        if (bookDataBean.getBookDto().getId() == null) {
+        if (bookGroupDataBean.getBookDto().getId() == null) {
             return save();
         
         }
         return edit();
     }
 private String edit() {
-        boolean success = bookService.edit(bookDataBean.getBookDto());
+        boolean success = bookService.edit(bookGroupDataBean.getBookDto());
         if (success) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Updated Successfully", null));
         }
@@ -89,7 +87,7 @@ private String edit() {
 
     private String save() {
         
-        boolean response = bookService.save(bookDataBean.getBookDto());
+        boolean response = bookService.save(bookGroupDataBean.getBookDto());
         if (response) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Successfully Saved", null));
                              
@@ -97,19 +95,17 @@ private String edit() {
         }
         return navigateToPage();
     }
-   
-
-
+  
 
     public String navigateToPage() {
-        Utility.removeSessionBeanJSFDataModelObject("bookDataBean");
-        bookDataBean = (BookDataBean) Utility.getSessionObject("bookDataBean");
-        bookDataBean.setBookDtos(bookService.getAllBooks());
+        Utility.removeSessionBeanJSFDataModelObject("bookGropuDataBean");
+        bookGroupDataBean = (BookGroupDataBean) Utility.getSessionObject("bookGroupDataBean");
+        bookGroupDataBean.setBookDtos(bookService.getAllBooks());
                 return returnToPage();
     }
 
     public String initEdit() {
-        bookDataBean.setCreateEditPanel(true);
+        bookGroupDataBean.setCreateEditPanel(true);
                 edit = true;
 
 
@@ -117,9 +113,9 @@ private String edit() {
     }
 
  public String delete(BookDto bookdto) {
-        bookDataBean.getBookDto().setDeletedByAdminDto(adminDto);
+        bookGroupDataBean.getBookDto().setDeletedByAdminDto(adminDto);
 
-        boolean success = bookService.delete(bookDataBean.getBookDto());
+        boolean success = bookService.delete(bookGroupDataBean.getBookDto());
         if (success) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Deleted Successfully", null));
 
@@ -133,6 +129,5 @@ private String edit() {
 
     }
 
-       
 
 }

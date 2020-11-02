@@ -51,9 +51,9 @@ public class BookServiceImpl implements BookService {
         return c;
     }
    
-private void setCreateEditCommonParameters(BookCategory c, BookDto bookDto) {
-        c.setDescription(bookDto.getDescription());
-        c.setName(bookDto.getName());
+private void setCreateEditCommonParameters(BookCategory book, BookDto bookDto) {
+        book.setDescription(bookDto.getDescription());
+        book.setName(bookDto.getName());
             }
 
 
@@ -63,8 +63,7 @@ private void setCreateEditCommonParameters(BookCategory c, BookDto bookDto) {
 BookCategory bc   = bookDao.getById(bookDto.getId());
  bc.setLastUpdatedDate(new Date());
         bc.setUpdatedByAdmin(adminDao.getById(bookDto.getUpdatedByAdminDto().getId()));
-
-
+        bc.setStatus(statusDao.getByDesc(StatusConstants.EDIT_APPROVE.getName()));
 
         setCreateEditCommonParameters(bc, bookDto);
         return bookDao.modify(bc);
