@@ -9,7 +9,7 @@
     </h:head>
     <h:body>
         <rich:panel>
-            <h3>List Users</h3>
+            <h3>List Issue</h3>
                 
         <rich:panel id="panel">
             <h:form>
@@ -23,7 +23,7 @@
             <h:form id="manageNoticePanelForm">
                 <rich:dataTable id="dtDepartment"
                                 value="#{issueRuleSettingDataModelJsf.issueRuleSettingDtos}"
-                                        var="book"
+                                        var="issue"
                                         rowKeyVar="row">
                              <f:facet name="noData">
                                 <h:outputText value="No records found!" id="noRecord" style="font-size: 14px;color: red"/>
@@ -44,70 +44,70 @@
                             <f:facet name="header">
                                 <h:outputLabel value="Member Type"/>
                             </f:facet>
-                            <h:outputText value="#{issueRuleSettingVar.memberType}"/>
+                            <h:outputText value="#{issue.memberType}"/>
                         </h:column>
 
                         <h:column>
                             <f:facet name="header">
                                 <h:outputLabel value="Semester"/>
                             </f:facet>
-                            <h:outputText value="#{issueRuleSettingVar.semester}"/>
+                            <h:outputText value="#{issue.semester}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputLabel value="No of Book Allowed"/>
                             </f:facet>
-                            <h:outputText value="#{issueRuleSettingVar.noOfBookAllowed}"/>
+                            <h:outputText value="#{issue.noOfBookAllowed}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputLabel value="No of Renewal Days"/>
                             </f:facet>
-                            <h:outputText value="#{issueRuleSettingVar.noOfRenewalDays}"/>
+                            <h:outputText value="#{issue.noOfRenewalDays}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputLabel value="No of Renews"/>
                             </f:facet>
-                            <h:outputText value="#{issueRuleSettingVar.noOfRenews}"/>
+                            <h:outputText value="#{issue.noOfRenews}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputLabel value="Fine per extra Day"/>
                             </f:facet>
-                            <h:outputText value="#{issueRuleSettingVar.finePerExtraDay}"/>
+                            <h:outputText value="#{issue.finePerExtraDay}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputLabel value="Book Category"/>
                             </f:facet>
-                            <h:outputText value="#{issueRuleSettingVar.bookCategoryDto.name}"/>
+                            <h:outputText value="#{issue.bookCategoryDto.name}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputLabel value="Created Date"/>
                             </f:facet>
-                            <h:outputText value="#{issueRuleSettingVar.createdDate}"/>
+                            <h:outputText value="#{issue.createdDate}"/>
                         </h:column>
 
                         <h:column>
                             <f:facet name="header">
                                 <h:outputLabel value="Modified Date"/>
                             </f:facet>
-                            <h:outputText value="#{issueRuleSettingVar.lastUpdatedDate}"/>
+                            <h:outputText value="#{issue.lastUpdatedDate}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">
                                 <h:outputLabel value="Created By"/>
                             </f:facet>
-                            <h:outputText value="#{issueRuleSettingVar.createdByAdminDto.username}"/>
+                            <h:outputText value="#{issue.createdByAdminDto.username}"/>
                         </h:column>
                          <h:column>
                <f:facet name = "header">Action</f:facet>
                <h:commandButton value = "Edit" 
                                 action = "#{bookSubGroupBeanJsf.initEdit()}" >        
                   <f:setPropertyActionListener 
-                      target = "#{bookSubGropuDataModelJsf.bookSubGroupDto}" value = "#{book}" />
+                      target = "#{bookSubGropuDataModelJsf.bookSubGroupDto}" value = "#{issue}" />
                </h:commandButton>
             </h:column>
 
@@ -116,7 +116,7 @@
                     <h:commandButton id="delete" value="Delete" action="#{bookSubGroupBeanJsf.delete(bookdto)}"
                                      styleClass="btn btn-danger">
                     <f:setPropertyActionListener 
-                  target = "#{bookSubGropuDataModelJsf.bookGroupDto}" value = "#{book}" />
+                  target = "#{bookSubGropuDataModelJsf.bookGroupDto}" value = "#{issue}" />
                </h:commandButton>
 
                                     </h:column>
