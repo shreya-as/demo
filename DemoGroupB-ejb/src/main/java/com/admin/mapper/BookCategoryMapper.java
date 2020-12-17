@@ -15,6 +15,14 @@ import java.util.List;
  * @author fox
  */
 public class BookCategoryMapper extends AbstractCodeMapper {
+    public static List<BookDto> convertToDtos(List<BookCategory> Book ) {
+        List<BookDto> bookDtos = new ArrayList<>();
+        for (BookCategory book : Book) {
+            bookDtos.add(convertToDto(book));
+        }   
+        return bookDtos;
+    }
+
      public static BookDto convertToDto(BookCategory book) {
         BookDto bookDto = new BookDto();
           bookDto.setId(book.getId());
@@ -23,12 +31,5 @@ public class BookCategoryMapper extends AbstractCodeMapper {
         return bookDto;
     }
 
-public static List<BookDto> convertToDtos(List<BookCategory> Book ) {
-        List<BookDto> bookDtos = new ArrayList<>();
-        for (BookCategory book : Book) {
-            bookDtos.add(convertToDto(book));
-        }   
-        return bookDtos;
-    }
 
 }

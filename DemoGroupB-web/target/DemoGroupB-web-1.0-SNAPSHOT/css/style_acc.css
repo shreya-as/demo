@@ -1,0 +1,132 @@
+/*@font-face {
+                        font-family: 'MyriadPro-Cond';
+                        src: url('../font/myriadpro-cond.eot');
+                        src: url('../font/myriadpro-cond.eot?#iefix') format('embedded-opentype'),
+                                                url('../font/myriadpro-cond.woff') format('woff'),
+                                                url('../font/myriadpro-cond.ttf') format('truetype'),
+                                                url('../font/myriadpro-cond.svg#myriadpro-cond') format('svg');
+                        font-weight: normal;
+                        font-style: normal;
+                }
+*/
+
+
+#accordion {
+    list-style: none;
+    padding: 0 0 0 0;
+    width: 100%;
+}
+#accordion div {
+    display: block;
+    background: #f1f1f1 url("../images/nav_up.gif") no-repeat 10px 11px;
+    font-weight: normal;
+    padding: 5.3px 25px;
+    margin: 1px;
+    cursor: pointer;
+    /* list-style: circle; */
+    color: #000;
+    border-top: 1px solid #f1f1f1;
+    /* border-bottom: 1px solid #c0c0c0; */
+    font-size: 12px !important;
+    font-weight: bold;
+}
+
+/*#accordion ul {
+  list-style: none;
+padding: 0 0 6px 0;
+background: #FFC7CD;
+}*/
+
+#accordion ul {
+    list-style: none;
+    background: #FFC7CD;
+}
+
+#accordion ul{
+    display: none;
+}
+
+/*#accordion ul li {
+    font-weight: normal;
+    cursor: auto;
+    background-color: #fff;
+
+    padding: 5px 25px;
+    border-bottom: 1px solid #cecece;
+    background: #f1f1f1 url("../images/sub_nav.gif") no-repeat 10px 13px;
+   margin: 0 10px;
+}*/
+
+#accordion ul li {
+    font-weight: normal;
+    cursor: auto;
+    background-color: #fff;
+    padding: 5px 5px 5px 50px;
+    border-bottom: 1px solid #cecece;
+    background: #f1f1f1 url("../images/sub_nav.gif") no-repeat 30px 13px;
+    margin: 0;
+}
+
+#accordion ul li a{
+    color: #000;
+    text-decoration: none;
+    font-size: 12px;
+
+}
+
+#accordion ul li a:hover{
+    color: #E05B2F;
+    text-decoration: none;
+}
+#accordion a {
+    text-decoration: none;
+}
+#accordion a:hover {
+    text-decoration: underline;
+}
+
+#accordion ul.act{
+    display:block;   
+}
+
+#accordion a.selected{
+    color : #E05B2F;
+}
+
+/* -- Pagination -- */
+.rf-ds-btn .rf-ds-btn-last{
+    color: #FFFFFF;
+}
+
+.downloads{
+    float: right;
+}
+
+.absent{
+    color:#991A00;
+    font-weight: bold;  
+}
+
+.present{
+    color:#113B08;
+    font-weight: bold;  
+}
+
+.leave{
+    color:#000000;
+    font-weight: bold;  
+}
+
+.ui-growl-error {
+    background-color: #DA2727;
+}
+
+
+.ui-growl-info {
+    background-color: #438902;
+}
+
+.ui-growl {
+    top: auto;
+    bottom: 0px;
+}

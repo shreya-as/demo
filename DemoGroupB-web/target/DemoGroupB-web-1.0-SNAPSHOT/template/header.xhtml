@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition>
+        <div class="header_lt">            
+            <h:form>
+                <p:growl globalOnly="true">
+<!--                    <p:autoUpdate/>-->
+                </p:growl>
+            </h:form>
+        </div>
+
+        <div class="header_rt">
+            <h:form>
+                <p class="user">
+                    <i class="usericon"></i>
+                    <b>#{head['head.welcome']}</b>
+                    
+                </p>
+                
+            </h:form>
+        </div>
+        <a href="footer.xhtml"></a>
+
+    </ui:composition>
+</html>

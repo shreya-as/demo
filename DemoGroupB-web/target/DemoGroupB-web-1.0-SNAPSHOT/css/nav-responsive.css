@@ -1,0 +1,50 @@
+@media only screen and (max-width: 768px) {
+    .nav-wrapper{
+        width: 100%;
+        max-height: 500px;
+        /*padding-bottom: 70px;*/
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+  .left_con {
+    width: 30%;
+    border-bottom: 5px solid #f1f1f1;
+    }
+    .right_con{
+        width: 67%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+  .left_con {
+    width: 100%;
+    position: fixed;
+    z-index: 9;
+    top: 93px;
+    border-bottom: 5px solid #f1f1f1;
+    }
+    .right_con{
+        width: 100%;
+        padding: 0 20px;
+        padding-top: 15px;
+        float: none;
+        clear: both;
+    }
+    
+    #accordion{
+        display: none;
+        margin-bottom: 80px;
+    }
+}
+
+@media only screen and (max-width: 410px) {
+    .header {
+        height: 111px;
+    }
+  .left_con {
+    top: 110px;
+   }
+   .btn-toggle{
+       top: 126px;
+   }
+}

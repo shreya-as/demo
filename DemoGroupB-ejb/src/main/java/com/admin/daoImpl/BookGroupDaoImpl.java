@@ -5,12 +5,9 @@
  */
 package com.admin.daoImpl;
 
-import com.admin.constant.StatusConstants;
 import com.admin.dao.BookGroupDao;
-import com.admin.dto.BookGroupDto;
 import com.payrollSystem.entity.common.BookGroup;
 import javax.ejb.Stateless;
-import javax.persistence.Query;
 
 /**
  *
@@ -21,4 +18,5 @@ public class BookGroupDaoImpl extends StatusableDaoImpl<BookGroup> implements Bo
    public BookGroupDaoImpl(){
        super(BookGroup.class);
    }
+
    }

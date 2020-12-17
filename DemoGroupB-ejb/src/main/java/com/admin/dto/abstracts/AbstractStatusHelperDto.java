@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public abstract class AbstractStatusHelperDto extends AbstractDeletedByHelperDto {
-
+  
     private StatusDto statusDto;
     
     public StatusDto getStatusDto() {

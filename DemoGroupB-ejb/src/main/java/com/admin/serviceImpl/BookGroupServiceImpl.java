@@ -67,7 +67,7 @@ private void setCreateEditCommonParameters(BookGroup book, BookGroupDto bookgrou
    
     @Override
     public boolean edit(BookGroupDto bookgroupdto) {
-BookGroup bc   = bookgroupDao.getById(bookgroupdto.getId());
+ BookGroup bc   = bookgroupDao.getById(bookgroupdto.getId());
  bc.setLastUpdatedDate(new Date());
         bc.setUpdatedByAdmin(adminDao.getById(bookgroupdto.getUpdatedByAdminDto().getId()));
         bc.setStatus(statusDao.getByDesc(StatusConstants.EDIT_APPROVE.getName()));

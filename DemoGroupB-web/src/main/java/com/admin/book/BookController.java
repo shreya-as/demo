@@ -35,9 +35,6 @@ public class BookController {
     
     @ManagedProperty(value = "#{bookDataBean}")
     private  BookDataBean bookDataBean;
-
-   
-    
     private AdminDto adminDto;
     private CollegeDto collegeDto;
     private StatusDto statusDto;

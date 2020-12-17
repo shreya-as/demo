@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:a4j="http://richfaces.org/a4j"
+      xmlns:rich="http://richfaces.org/rich"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <ui:composition template="/template/mainTemplate.xhtml">
+        <ui:define name="title">Designation</ui:define>
+        <ui:define name="content">
+            <h1 class="pagetitle">Designation</h1>
+            <div class="account">
+                <div class="rtinner_left_block">            
+                    <p:growl globalOnly="true"/>
+                    <h:form>
+                        <h:commandButton value="New" action="#{designationBeanJsf.initCreate}"/>
+                    </h:form>
+                    
+
+                    <h:form id="manageNoticePanelForm">
+                        <rich:dataTable id="dtDesignation"
+                                        value="#{designationDataModelJsf.designationDtos}"
+                                        var="designationDto"
+                                        rowKeyVar="row">
+                            <f:facet name="noData">
+                                <h:outputText value="No records found!" id="noRecord" style="font-size: 14px;color: red"/>
+                                <script>
+                                    document.getElementById("adiv").style.visibility = "hidden";
+                                </script>
+                            </f:facet>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputLabel value="S.N."/>
+                                </f:facet>
+                                <h:outputText value="#{row+1}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputLabel value="Name"/>
+                                </f:facet>
+                                <h:outputText value="#{designationDto.name}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputLabel value="Code"/>
+                                </f:facet>
+                                <h:outputText value="#{designationDto.code}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputLabel value="Description"/>
+                                </f:facet>
+                                <h:outputText value="#{designationDto.description}"/>
+                            </h:column>
+                            
+                              <h:column>
+                                <f:facet name="header">
+                                    <h:outputLabel value="Basic Salary"/>
+                                </f:facet>
+                                  <h:outputText value="#{designationDto.basicSalary}"/>
+                            </h:column>
+                             <h:column>
+                                <f:facet name="header">
+                                    <h:outputLabel value="Grade"/>
+                                </f:facet>
+                                 <h:outputText value="#{designationDto.grade}"/>
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputLabel value="Actions"/>
+                                </f:facet>
+
+                                <h:commandLink class="action edit" title="Edit" value="" action="#{designationBeanJsf.initEdit()}">
+                                    <f:setPropertyActionListener value="#{designationDto}" target="#{designationDataModelJsf.designationDto}"/>
+                                    <f:ajax execute="@this" onevent="function(data){showJqueryLoader(data)}" render="@form"/>
+                                </h:commandLink>
+
+                                <h:commandLink class="action delete" title="Delete" value="" action="#{designationBeanJsf.delete}" onclick="return confirm('Are You Sure?')">
+                                    <f:setPropertyActionListener value="#{designationDto}" target="#{designationDataModelJsf.designationDto}"/>
+                                    <f:ajax execute="@this" onevent="function(data){showJqueryLoader(data)}" render="@form"/>
+                                </h:commandLink>
+
+                            </h:column>
+                        </rich:dataTable>
+                    </h:form>
+                </div>
+            </div>
+
+            <h:form id="frmEditParent">
+                <rich:popupPanel show="#{designationDataModelJsf.createEditPanel}" styleClass="customPop" id="popupEditParent" domElementAttachment="form" autosized="true" resizeable="false" moveable="true" onmaskclick="#{rich:component('popupEditParent')}.hide();">
+                    <div class="account">
+                        <div class="rtinner_left_block">
+                            <fieldset class="container-fluid">
+                                <legend><h2>Create/Edit Designation</h2></legend>
+                                <p>
+                                    <h:outputLabel value="Name: "><span class="compulsoryField">*</span></h:outputLabel>
+                                    <h:inputText id="itClassName" 
+                                                 required="true" 
+                                                 requiredMessage="Enter Name" 
+                                                 validatorMessage="Enter Valid Name."
+                                                 value="#{designationDataModelJsf.designationDto.name}">
+                                        <f:converter converterId="convertor.StringSpace"/>
+                                    </h:inputText>
+                                    <h:message class="redcolortext" for="itClassName" id="itClassNameErr"/>
+                                </p>
+                                <p>
+                                    <h:outputLabel value="Code: "><span class="compulsoryField">*</span></h:outputLabel>
+                                    <h:inputText id="itClassCode" 
+                                                 required="true" 
+                                                 requiredMessage="Enter Code" 
+                                                 validatorMessage="Enter Valid Code."
+                                                 value="#{designationDataModelJsf.designationDto.code}">
+                                    </h:inputText>
+                                    <h:message class="redcolortext" for="itClassCode" id="itClassCodeErr"/>
+                                </p>
+
+                                <p>
+                                    <h:outputLabel value="Description: "><span class="compulsoryField">*</span></h:outputLabel>
+                                    <h:inputText id="itClassDescription" 
+                                                 required="true" 
+                                                 requiredMessage="Enter Description" 
+                                                 validatorMessage="Enter Valid Description."
+                                                 value="#{designationDataModelJsf.designationDto.description}">
+                                    </h:inputText>
+                                    <h:message class="redcolortext" for="itClassDescription" id="itClassDescriptionErr"/>
+                                </p>
+                                        <p>
+                                    <h:outputLabel value="Basic Salary: "><span class="compulsoryField">*</span></h:outputLabel>
+                                    <h:inputText id="itClassBasicSalary" 
+                                                 required="true" 
+                                                 requiredMessage="Enter Salary" 
+                                                 validatorMessage="Enter Valid Salary."
+                                                 value="#{designationDataModelJsf.designationDto.basicSalary}">
+                                    </h:inputText>
+                                    <h:message class="redcolortext" for="itClassBasicSalary" id="itClassBasicSalaryErr"/>
+                                </p>
+                                         <p>
+                                    <h:outputLabel value="Grade: "><span class="compulsoryField">*</span></h:outputLabel>
+                                    <h:inputText id="itClassGrade" 
+                                                 required="true" 
+                                                 requiredMessage="Enter Grade" 
+                                                 validatorMessage="Enter Valid Grade."
+                                                 value="#{designationDataModelJsf.designationDto.grade}">
+                                    </h:inputText>
+                                    <h:message class="redcolortext" for="itClassGrade" id="itClassGradeErr"/>
+                                </p>
+                            </fieldset>
+                        </div>
+                        <div class="rtinner_right_block">
+                            <div class="Btn_block">
+                                <p>
+                                    <h:commandButton id="btnEditParent" value="Save" action="#{designationBeanJsf.saveUpdate()}">
+                                        <f:ajax execute="@form" onevent="function(data){handleDisableButton(data,'frmEditParent:btnEditParent')}" render="@form"/>
+                                    </h:commandButton>
+
+                                    <h:commandButton id="btnCancel" value="Cancel" action="#{designationBeanJsf.navigateToPage()}" immediate="true">
+                                        <f:ajax execute="@form" onevent="function(data){handleDisableButton(data,'frmEditParent:btnCancel')}" render="@form"/>
+                                    </h:commandButton>
+                                </p>
+                            </div>
+                        </div>
+                    </div> 
+                </rich:popupPanel>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>

@@ -1,0 +1,38 @@
+
+@media only screen and (max-width: 600px) {
+    .account p input, 
+    .delivery p input {
+        width: 100%;
+    }
+
+    .account p select, .delivery p select, .selectSearch {
+        width: 100%;
+    }
+
+    .text_area {
+        min-width: 100%;
+    }
+
+    .upload-image-block .rf-fu-lst {
+        width: 100%;
+        margin: 10px 0 0 0;
+    }
+
+    .account .rf-fu-itm {
+        min-width: auto;
+    }
+
+    .rf-fu-itm-rgh {
+        width: 20%;
+    }
+
+    .upload-image-block .left-align img {
+        width: 100%;
+        height: auto;
+        margin: 20px 0 0 0;
+    }
+
+    .profile-services {
+        margin: 0 0 0 0;
+    }
+}

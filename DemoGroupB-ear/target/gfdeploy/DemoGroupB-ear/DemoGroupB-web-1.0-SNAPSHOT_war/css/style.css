@@ -1,0 +1,147 @@
+/* 
+    Document   : style
+    Created on : Aug 6, 2012, 12:22:48 PM
+    Author     : manoj.lamsal
+    Description:
+*/
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+root { 
+    display: block;
+}
+
+* { margin: 0px; 
+    padding: 0px;
+}
+
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    background: #2d2d2d;
+    font: 11px/16px "Tahoma", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+}
+#wrapper{
+    margin:0 auto;
+    width:100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+#header{
+    height:100%;
+    background: #e2e2e2;
+}
+.top_logo{
+    float:left;
+    padding: 12px 0 0 0;
+    width:auto;
+}
+.top_welcome{
+    float:right;
+    width:80px;
+}
+#navigation{
+    background: #f1f1f1;
+
+}
+
+#content{
+    background: #FFF;
+    padding:15px;
+}
+h1.pagetitle {
+    font-size: 24px;
+    font-weight: normal;
+    padding: 8px 0 12px 14px;
+    border-bottom: 1px dotted #B6B6B6;
+    color: #C6000B;
+    margin: 0 0 10px;
+    background: url("../images/ilogo.png") no-repeat;
+}
+#content p{
+    padding:0px 0 5px 0;
+}
+
+#content p label{
+    float:left;
+    width:130px;
+    font-weight: bold;
+
+}
+#content p input{
+    font-size: 11px;
+    padding: 2px 5px;
+
+}
+.errormsg{
+    color:#000;
+    margin-bottom: 10px;
+    font-weight:bold;
+    padding: 8px 8px 8px 35px;
+    font-size: 13px;
+    list-style: none;
+    background:#f9edbe url("../images/error.png") no-repeat 5px 4px;
+    border:1px solid #f0c36d; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;
+}
+.successmsg{
+    color:#000;
+    list-style: none;
+    margin-bottom: 10px;
+    font-weight:bold;
+    padding: 8px 8px 8px 35px;
+    font-size: 13px;
+    background:#f9edbe url("../images/success.png") no-repeat 5px 4px;
+    border:1px solid #f0c36d; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;
+}
+#footer{
+    padding: 30px;
+    text-align: center;
+    background: #e2e2e2;
+}
+.clear{
+    clear:both;
+}
+.redcolortext{
+    color:red;
+    margin-left: 5px;
+
+}
+.view{
+    color: green;
+    text-decoration: none
+}
+
+.notview{
+    color: #FF9927;
+    text-decoration: none
+}
+
+fieldset {
+    clear: both;
+}
+
+
+*.rf-dt{
+    width: 100%;
+} 
+
+*.rf-pp-cntr{
+    width: auto !important;
+}
+
+*.rf-pp-cnt-scrlr{
+    width: auto !important;
+}

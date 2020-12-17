@@ -1,0 +1,77 @@
+
+@media only screen and (max-width: 600px) {
+    .header{
+        position: fixed;
+        z-index: 9;
+    }
+    .header .header_in .header_rt {
+        float: none; 
+    }
+    .left_con p.head a{
+        padding: 15px 10px 15px 10px;
+    }
+    .btn-toggle{
+        display: block;
+    }
+
+    .title_bar_back{
+        background: none;
+    }
+
+    .account p span {
+        width: 100%;
+    }
+
+    .account-wrapper{
+        display: block !important;
+    }
+
+    .accounthome {
+        width: 100%;
+    }
+
+    .title_bar_back{
+        padding-bottom: 220px;
+    }
+
+    h1.pagetitle{
+        margin: 12px 0;
+        font-size: 18px;
+    }
+    .account{
+        float: none;
+    }
+
+    .account .rf-fu-hdr{
+        white-space: pre-wrap;
+    }
+
+    .show-image-block{
+        position: absolute;
+        margin:0 0 0 233px;
+    }
+
+    .show-image-block img{
+        width: 50px;
+        height: 50px;
+        margin: 0 0 0 12px;
+    }
+
+    .search-box {
+        margin: -42px 0 0 0px;
+    }
+
+    .search-box input{
+        width: 300px;
+        padding: 5px 3px;
+        /*float: left;*/
+        font-size: 12px;
+        font-weight: 500;
+        color: #777777;
+    }
+
+    .search-button{
+        position: absolute;
+        margin: -33px 0 0 243px;
+    }
+}

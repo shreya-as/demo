@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:rich="http://richfaces.org/rich">
+    <h:head>
+        <title></title>
+    </h:head>
+    <h:body>
+        <rich:panel>
+            <h3>List Users</h3>
+                
+        <rich:panel id="panel">
+            <h3>Add Book</h3>
+            <h:form >
+                <p>Name: <rich:inplaceInput id="name" value="#{bookController.bookDataBean.bookDto.name}" validatorMessage="Input name is required" defaultLabel="Input your name ">
+                        <f:validateRequired />
+                        <rich:validator/>
+                    </rich:inplaceInput>
+                    <rich:message for="name" />
+                </p>.
+
+
+                <p>   <h:outputLabel value="Description: "><span class="compulsoryField">*</span></h:outputLabel>
+                                    
+                                    
+                                                    <h:inputTextarea id="desc" value="#{bookController.bookDataBean.bookDto.description}"
+                             rendered="#{bookController.edit==false}" required="true"
+                             requiredMessage="Invalid Field" />
+                                                  
+                                    
+                                    
+                                </p>
+                
+            
+
+               
+                <p>
+                    <h:commandButton value="add"  action="#{bookController.saveUpdate()}" >
+                      
+                    </h:commandButton>
+                    </p>
+          </h:form>      
+               
+        </rich:panel>
+
+
+                    
+            <h:form id="manageNoticePanelForm">
+                <rich:dataTable id="dtDepartment"
+                                value="#{bookDataBean.bookDtos}"
+                                        var="book"
+                                        rowKeyVar="row">
+                             <f:facet name="noData">
+                                <h:outputText value="No records found!" id="noRecord" style="font-size: 14px;color: red"/>
+                                <script>
+                                    document.getElementById("adiv").style.visibility = "hidden";
+                                </script>
+                            </f:facet>
+
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputLabel value="S.N."/>
+                                </f:facet>
+                                <h:outputText value="#{row+1}"/>
+                            </h:column>
+                    
+<h:column>
+                                <f:facet name="header">
+                                    <h:outputLabel value="S.N."/>
+                                </f:facet>
+                                <h:outputText value="#{book.id}"/>
+                            </h:column>
+
+                            <h:column>
+                                <f:facet name="header">
+                                    <h:outputLabel value="Name"/>
+                                </f:facet>
+                                <h:outputText value="#{book.name}"/>
+                            </h:column>
+
+                                           <h:column>
+                                               <f:facet name="header">Description</f:facet>#{book.description}</h:column>
+
+                                 <h:column>
+               <f:facet name = "header">Action</f:facet>
+               <h:commandButton value = "Edit" 
+                                action = "#{bookController.initEdit()}" >        
+                  <f:setPropertyActionListener 
+                  target = "#{bookDataBean.bookDto}" value = "#{book}" />
+               </h:commandButton>
+            </h:column>
+
+                <h:column>
+                    <f:facet name="header">Action</f:facet>
+                    <h:commandButton id="delete" value="Delete" action="#{bookController.delete(bookdto)}"
+                                     styleClass="btn btn-danger">
+                    <f:setPropertyActionListener 
+                  target = "#{bookDataBean.bookDto}" value = "#{book}" />
+               </h:commandButton>
+
+                                    </h:column>
+                </rich:dataTable>
+            </h:form>
+        </rich:panel>
+
+
+
+        <h:form id="frmEditParent">
+                <rich:popupPanel show="#{bookDataBean.createEditPanel}" styleClass="customPop" id="popupEditParent" domElementAttachment="form" autosized="true" resizeable="false" moveable="true" onmaskclick="#{rich:component('popupEditParent')}.hide();">
+                    <div class="account">
+                        <div class="rtinner_left_block">
+                            <fieldset class="container-fluid">
+                                <legend><h2>Create/Edit Department</h2></legend>
+                                <p>
+                                    <h:outputLabel value="Name: "><span class="compulsoryField">*</span></h:outputLabel>
+                                    <h:inputText id="itClassName" 
+                                                 required="true" 
+                                                 requiredMessage="Enter Name" 
+                                                 validatorMessage="Enter Valid Name."
+                                                 value="#{bookController.bookDataBean.bookGroupDto.name}">
+                                        <f:converter converterId="convertor.StringSpace"/>
+                                    </h:inputText>
+                                    <h:message class="redcolortext" for="itClassName" id="itClassNameErr"/>
+                                </p>
+                                
+
+                                <p>
+                                    <h:outputLabel value="Description: "><span class="compulsoryField">*</span></h:outputLabel>
+                                    <h:inputText id="itClassDescription" 
+                                                 required="true" 
+                                                 requiredMessage="Enter Description" 
+                                                 validatorMessage="Enter Valid Description."
+                                                 value="#{bookController.bookDataBean.bookGroupDto.description}">
+                                    </h:inputText>
+                                    <h:message class="redcolortext" for="itClassDescription" id="itClassDescriptionErr"/>
+                                </p>
+                            </fieldset>
+                        </div>
+                        <div class="rtinner_right_block">
+                            <div class="Btn_block">
+                                <p>
+                                    <h:commandButton id="btnEditParent" value="Save" action="#{bookController.saveUpdate()}">
+                                    </h:commandButton>
+
+                                    <h:commandButton id="btnCancel" value="Cancel" action="#{bookController.navigateToPage()}" immediate="true">
+                                    </h:commandButton>
+                                </p>
+                            </div>
+                        </div>
+                    </div> 
+                </rich:popupPanel>
+            </h:form>
+
+
+
+           </h:body>
+</html>
+

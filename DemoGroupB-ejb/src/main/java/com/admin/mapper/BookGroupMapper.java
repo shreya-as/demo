@@ -31,7 +31,6 @@ public static List<BookGroupDto> convertToDtos(List<BookGroup> Book ) {
         }   
         return bookDtos;
     }
-
     
     
 }

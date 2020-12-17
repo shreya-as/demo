@@ -24,13 +24,12 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class BookServiceImpl implements BookService {
-     @EJB
+    @EJB
     private AdminDao adminDao;
     @EJB
     private StatusDao statusDao;
     @EJB
     private BookDao bookDao;
-
      @Override
     public boolean save(BookDto bookdto) {
       
@@ -82,8 +81,7 @@ BookCategory bc   = bookDao.getById(bookDto.getId());
     @Override
     public List<BookDto> getAllBooks() {
         return  BookCategoryMapper.convertToDtos( bookDao.findAll());
-
-    }
+     }
 
    
     

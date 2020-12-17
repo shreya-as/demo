@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <f:view contentType="text/html">
+        <h:head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+            <!-- Bootstrap minified CSS -->
+            <link href="css/bootstrap.css" rel="stylesheet" type="text/css"/>
+            <link href="css/mainstyler.css" rel="stylesheet" type="text/css" />
+            <link href="css/style_acc.css" rel="stylesheet" type="text/css" />
+            <link href="css/layout-responsive.css" rel="stylesheet" type="text/css" />
+            <link href="css/nav-responsive.css" rel="stylesheet" type="text/css" />
+            <link href="css/form-responsive.css" rel="stylesheet" type="text/css" />
+            <script type="text/javascript" language="javascript" src="/admin/javax.faces.resource/jquery.js.xhtml" />
+            <style id="BEWSKTSLFGTLDCS" type="text/css">body{display:none !important;}</style>
+            <script type="text/javascript">
+                if (self === top) {
+                    var BEWSKTSLFGTLDCS = document.getElementById("BEWSKTSLFGTLDCS");
+                    BEWSKTSLFGTLDCS.parentNode.removeChild(BEWSKTSLFGTLDCS);
+                } else {
+                    top.location = self.location;
+                }
+            </script>
+            <title><ui:insert name="title">Default title</ui:insert></title>
+            <script type="text/javascript" >
+                jQuery.noConflict();
+
+                jQuery(document).ready(function () {
+                    jQuery("#accordion > li > div").click(function () {
+
+                        if (false == jQuery(this).next().is(':visible')) {
+                            jQuery('#accordion ul').slideUp(300);
+                        }
+                        jQuery(this).next().slideToggle(300);
+                    });
+                });
+            </script>
+            <script type="text/javascript" >
+                jQuery.noConflict();
+
+                jQuery(document).ready(function () {
+                    jQuery("#accordion_sub > li > div").click(function () {
+
+                        if (false == jQuery(this).next().is(':visible')) {
+                            jQuery('#accordion_sub ul').slideUp(300);
+                        }
+                        jQuery(this).next().slideToggle(300);
+                    });
+                });
+            </script>
+
+        </h:head>
+
+        <h:body>
+
+            <div class="header">
+                <div class="header_in">
+
+                    <ui:insert name="header">
+                        <ui:include src="header.xhtml"/>
+                    </ui:insert>
+                </div>
+
+            </div>
+            <div class="main_con">
+
+                <div class="main_con_in">
+                    <div class="left_con">
+                        <ui:insert name="navigation">
+                            <ui:include src="navigation.xhtml"/>
+                        </ui:insert>
+                    </div>
+                    <div class="right_con">
+
+                        <ui:insert name="content">
+                            Here will be content
+                        </ui:insert>
+                    </div>
+
+                </div>
+                <div class="clear"></div>
+
+            </div>
+            <div class="footer">
+                <div class="footer_in">
+                    <ui:insert name="footer">
+                        <ui:include src="footer.xhtml"/>
+                    </ui:insert>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </h:body>
+    </f:view>
+</html>
+
